@@ -1,0 +1,1 @@
+This directory is for all scripts which interact with the DOM to initialize the basic UI.

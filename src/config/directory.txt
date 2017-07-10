@@ -1,0 +1,1 @@
+This directory is for the configuration of all components.
