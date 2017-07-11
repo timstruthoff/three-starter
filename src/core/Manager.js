@@ -22,8 +22,41 @@ class Manager {
             h: window.innerHeight,
             h2: window.innerHeight / 2
         };
+
+        this.bind();
+
+        //this.startWebGL();
+
+        this.startStats();
+        this.startGUI();
+
+        this.addEventListener();
+
+        this.update();
     }
 
+
+    /*
+    Binding the Manager "this" to the functions "this".
+    */
+    bind() {
+
+        this.update = this.update.bind(this);
+        this.onKeyUp = this.onKeyUp.bind(this);
+        this.onResize = this.onResize.bind(this);
+
+    }
+
+
+    /*
+    Adding the event listeners for all global events.
+    */
+    addEventListener() {
+
+        window.addEventListener('resize', this.onResize);
+        window.addEventListener('keyup', this.onKeyUp);
+
+    }
 
     /*
 	Creating the stats display and showing itif in debug mode.
@@ -47,12 +80,12 @@ class Manager {
         this.gui.domElement.style.display = this.DEBUG ? 'block' : 'none';
 
         let cameraFolder = this.gui.addFolder('Camera');
-        cameraFolder.add(this.WebGL.camera.position, 'x', -10, 10);
-        cameraFolder.add(this.WebGL.camera.position, 'y', -10, 10);
-        cameraFolder.add(this.WebGL.camera.position, 'z', 50, 150);
+        //cameraFolder.add(this.WebGL.camera.position, 'x', -10, 10);
+        //cameraFolder.add(this.WebGL.camera.position, 'y', -10, 10);
+        //cameraFolder.add(this.WebGL.camera.position, 'z', 50, 150);
 
         let composerFolder = this.gui.addFolder('PostProcessing');
-        composerFolder.add(this.WebGL, 'useComposer');
+        //composerFolder.add(this.WebGL, 'useComposer');
 
     }
 
@@ -78,7 +111,7 @@ class Manager {
         let el = this.clock.getElapsedTime() * .05;
         let d = this.clock.getDelta();
 
-        this.WebGL.update(d);
+        //this.WebGL.update(d);
 
         this.stats.end()
 
@@ -88,7 +121,7 @@ class Manager {
 
 
     /*
-    Handling all events
+    Handling all global events
     */
     onKeyUp(e) {
 
@@ -106,7 +139,7 @@ class Manager {
             h2: window.innerHeight / 2
         };
 
-        this.WebGL.onResize();
+        //this.WebGL.onResize();
 
     }
 
