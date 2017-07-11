@@ -25,7 +25,7 @@ class Manager {
 
         this.bind();
 
-        //this.startWebGL();
+        this.startWebGL();
 
         this.startStats();
         this.startGUI();
@@ -94,7 +94,7 @@ class Manager {
 	Initializing the WebGL module.
     */
     startWebGL() {
-
+        console.log(window.innerHeight)
         this.WebGL = new WebGL(window.innerWidth, window.innerHeight);
         document.body.appendChild(this.WebGL.renderer.domElement);
 
@@ -111,7 +111,7 @@ class Manager {
         let el = this.clock.getElapsedTime() * .05;
         let d = this.clock.getDelta();
 
-        //this.WebGL.update(d);
+        this.WebGL.update(d);
 
         this.stats.end()
 
@@ -139,7 +139,7 @@ class Manager {
             h2: window.innerHeight / 2
         };
 
-        //this.WebGL.onResize();
+        this.WebGL.onResize();
 
     }
 
