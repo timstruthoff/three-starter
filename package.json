@@ -28,6 +28,10 @@
     "webpack-dev-server": "^2.5.1"
   },
   "dependencies": {
-    "domready": "^1.0.8"
+    "three": "^0.86.0",
+    "dat-gui": "^0.5.0",
+    "domready": "^1.0.8",
+    "raf": "^3.3.2",
+    "stats-js": "^1.0.0-alpha1"
   }
 }
