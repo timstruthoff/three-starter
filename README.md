@@ -11,3 +11,6 @@ Build for production:
 
 Run in development mode:
 `npm run`
+
+
+Inspired by Armand Biteau's [Three.js ES6 boilerplate](https://github.com/ArmandBiteau/threejs-es6-boilerplate).
